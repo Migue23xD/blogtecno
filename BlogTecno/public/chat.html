@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Blog de Tecnologías</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Chat Personalizado</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html" class="menu-item">Inicio</a></li>
+                <li><a href="categorias.html" class="menu-item">Categorías</a></li>
+                <li><a href="articulos.html" class="menu-item">Artículos</a></li>
+                <li><a href="noticias.html" class="menu-item">Noticias</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Chat en Línea</h2>
+
+        <!-- Historial de mensajes -->
+        <div class="chat-container">
+            <h3>Historial de Mensajes</h3>
+            <div id="chat-messages" class="chat-messages">
+                <!-- Los mensajes se cargarán dinámicamente aquí -->
+            </div>
+        </div>
+
+        <!-- Formulario para enviar mensajes -->
+        <form id="chatForm">
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="3" required></textarea>
+            <label for="file">Cargar archivo (opcional):</label>
+            <input type="file" id="file" name="file" accept="image/*,video/*,.pdf,.doc,.docx">
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Blog de Tecnologías</p>
+    </footer>
+</body>
+</html>

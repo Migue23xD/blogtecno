@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Contenido - Panel de Administración</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Panel de Administración - Publicar Contenido</h1>
+        <nav>
+            <ul>
+                <li><a href="admin-chats.html">Responder Chats</a></li>
+                <li><a href="admin.html">Inicio del Panel</a></li>
+                <li><a href="logout.php">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Publicar Nuevo Contenido</h2>
+        <form action="upload_post.php" method="post" enctype="multipart/form-data" class="upload-form">
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" required>
+            
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+            
+            <label for="tags">Etiquetas (separadas por comas):</label>
+            <input type="text" id="tags" name="tags" placeholder="Ejemplo: tecnología, IA, programación">
+            
+            <label for="file">Cargar archivo (opcional):</label>
+            <div class="file-upload">
+                <input type="file" id="file" name="file" accept="image/*,video/*,.pdf,.doc,.docx">
+                <span class="file-upload-label">Seleccionar archivo</span>
+                <div class="file-preview" id="file-preview">
+                    <!-- Vista previa del archivo cargado -->
+                </div>
+            </div>
+            
+            <button type="submit">Publicar</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Blog de Tecnologías</p>
+    </footer>
+</body>
+</html>

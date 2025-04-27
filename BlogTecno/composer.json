@@ -1,0 +1,19 @@
+{
+    "name": "miguel/blogtecno",
+    "description": "Blog de Tecnologías",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "psr/log": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "license": "MIT"
+}

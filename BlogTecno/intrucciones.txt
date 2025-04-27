@@ -1,0 +1,39 @@
+BLOG DE TECNOLOGIAS CON TECNOLOGIAS UTILIES 
+
+Objetivo: Desarrollar un blog de tecnologías con herramientas útiles, para compartir conocimientos, analizar tendencias y ayudar a los estudiantes y profesores a mantenerse actualizados en temas de tecnologías 
+
+1. Estructura y funcionalidades principales 
+
+Categorías de contenido: Secciones como programación, inteligencia artificial, ciberseguridad, diseño UX/UI, etc. 
+Artículos y guías: Publicaciones con análisis de tendencias, tutoriales, reseñas de herramientas y estudios de casos. 
+Sistema de comentarios: Espacio para que los lectores puedan opinar y debatir sobre los temas tratados. 
+Recursos descargables: PDFs, códigos de ejemplo y enlaces a herramientas útiles. 
+Sección de noticias: Últimos avances y novedades tecnológicas. 
+Integración con redes sociales: Opciones para compartir contenido en plataformas como Twitter, LinkedIn o Reddit. 
+Newsletter: Suscripción para recibir actualizaciones y artículos destacados. 
+Modo oscuro y accesibilidad: Mejora de experiencia de usuario. 
+Área de colaboración: Posibilidad de que expertos contribuyan con artículos o recursos. 
+2. Tecnologías sugeridas 
+
+Frontend: HTML, CSS, JavaScript. 
+Backend: Node.js con Django. 
+Base de datos: PostgreSQL. 
+3. Diseño y experiencia de usuario 
+
+Interfaz moderna y ligera para facilitar la lectura. 
+Diseño responsivo para dispositivos móviles y desktop. 
+Optimización SEO para mejorar la visibilidad en buscadores. 
+Elementos multimedia como videos y gráficos explicativos. 
+
+Adicional:
+Una seccion de soporte personalizado al usuario donde puede cargar imagenes, videos y documentos para una revision por parte de un experto
+(requiere loggin)
+
+CREATE TABLE uploads (
+    id SERIAL PRIMARY KEY,
+    file_name VARCHAR(255) NOT NULL,
+    file_path VARCHAR(255) NOT NULL,
+    file_type VARCHAR(50),
+    file_size INTEGER,
+    uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

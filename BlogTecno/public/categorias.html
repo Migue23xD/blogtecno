@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" class="user-view">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías - Blog de Tecnologías</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("src/controllers/categories.php")
+                .then(response => response.json())
+                .then(categories => {
+                    const categoryList = document.querySelector("ul.category-list");
+                    categories.forEach(category => {
+                        const li = document.createElement("li");
+                        li.innerHTML = `
+                            <h3>${category.name}</h3>
+                            <p>${category.description}</p>
+                            <a href="articulos.html?category_id=${category.id}">Ver artículos</a>
+                        `;
+                        categoryList.appendChild(li);
+                    });
+                });
+        });
+    </script>
+</head>
+<body class="secondary-page">
+    <header>
+        <h1>Categorías</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="articulos.html">Artículos</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="chat.html">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Explora por Categorías</h2>
+        <ul class="category-list">
+            <!-- Las categorías se cargarán dinámicamente aquí -->
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2025 Blog de Tecnologías</p>
+    </footer>
+</body>
+</html>

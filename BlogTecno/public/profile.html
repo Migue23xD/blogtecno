@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Blog de Tecnologías</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Mi Perfil</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="logout.php">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="profile-container">
+            <h2>Editar Perfil</h2>
+            <form action="src/controllers/profile.php" method="post" enctype="multipart/form-data" class="profile-form">
+                <div class="profile-picture-container">
+                    <label for="profile_picture">Foto de Perfil:</label>
+                    <div class="profile-picture-preview">
+                        <img id="profile-picture-preview" src="default-profile.png" alt="Vista previa de la foto de perfil">
+                    </div>
+                    <input type="file" id="profile_picture" name="profile_picture" accept="image/*">
+                </div>
+                <div class="profile-info">
+                    <label for="display_name">Nombre de Perfil:</label>
+                    <input type="text" id="display_name" name="display_name" placeholder="Tu nombre de perfil" required>
+                    
+                    <label for="bio">Descripción:</label>
+                    <textarea id="bio" name="bio" rows="4" placeholder="Escribe una breve descripción sobre ti"></textarea>
+                </div>
+                <div class="profile-actions">
+                    <button type="submit" class="btn-primary">Guardar Cambios</button>
+                    <button type="reset" class="btn-secondary">Restablecer</button>
+                </div>
+            </form>
+        </section>
+        <section class="profile-summary">
+            <h2>Resumen del Perfil</h2>
+            <div class="summary-card">
+                <img id="summary-picture" src="default-profile.png" alt="Foto de perfil">
+                <h3 id="summary-name">Nombre de Perfil</h3>
+                <p id="summary-bio">Aquí aparecerá tu descripción.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Blog de Tecnologías</p>
+    </footer>
+</body>
+</html>

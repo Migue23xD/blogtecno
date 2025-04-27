@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es" class="user-view">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículos - Blog de Tecnologías</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoryId = urlParams.get("category_id");
+
+            if (categoryId) {
+                fetch(`src/controllers/articles.php?category_id=${categoryId}`)
+                    .then(response => response.json())
+                    .then(articles => {
+                        const articleList = document.querySelector("ul.article-list");
+                        articles.forEach(article => {
+                            const li = document.createElement("li");
+                            li.innerHTML = `
+                                <h3>${article.title}</h3>
+                                <p>${article.content.substring(0, 100)}...</p>
+                                <a href="articulo.html?article_id=${article.id}">Leer más</a>
+                            `;
+                            articleList.appendChild(li);
+                        });
+                    });
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Artículos</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="categorias.html">Categorías</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="chat.html">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Lista de Artículos</h2>
+        <ul class="article-list">
+            <!-- Los artículos se cargarán dinámicamente aquí -->
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2025 Blog de Tecnologías</p>
+    </footer>
+</body>
+</html>
